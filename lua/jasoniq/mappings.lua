@@ -1,4 +1,4 @@
-local map = vm.keymap.set
+local map = vim.keymap.set
 
 -- General
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
