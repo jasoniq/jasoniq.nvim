@@ -1,5 +1,5 @@
 return {
-  -- file managing , picker etc
+  -- and a directory file explorer that is easy to use
   {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
@@ -8,6 +8,13 @@ return {
     end,
   },
 
+  -- update the file explorer with nice icons
+  -- https://github.com/nvim-tree/nvim-web-devicons
+  {
+    "nvim-tree/nvim-web-devicons",
+  },
+
+  -- add an easy to use command explorer
   {
     "folke/which-key.nvim",
     keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
