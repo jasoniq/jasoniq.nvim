@@ -42,13 +42,17 @@ return {
     },
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     opts = nvimtreeOpts,
-  },
+    config = function()
+      -- set keymaps
+      local keymap = vim.keymap -- for conciseness
 
-  -- add an easy to use command explorer
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
-    cmd = "WhichKey",
+      --keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+      keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
+      keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
+      keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
+
+      keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+      keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+    end
   },
 }
