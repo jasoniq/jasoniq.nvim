@@ -1,10 +1,23 @@
-vim.cmd("let g:netrw_liststyle = 3")
-
 local opt = vim.opt
 local o = vim.o
 local g = vim.g
 
 -------------------------------------- options ------------------------------------------
+
+-- disable netrw
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
+-- open nvim-tree on VimEnter
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+local function open_nvim_tree()
+
+  -- open nvim-tree
+  require("nvim-tree.api").tree.open()
+end
+
+-- general
 o.laststatus = 3
 o.showmode = false
 

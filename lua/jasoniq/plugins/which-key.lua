@@ -3,7 +3,15 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
     cmd = "WhichKey",
   },
 }
