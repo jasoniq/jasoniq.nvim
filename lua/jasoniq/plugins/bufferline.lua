@@ -11,7 +11,7 @@ return {
         delay = 200,
         reveal = {'close'}
       },
-      offset = {
+      offsets = {
         filetype = "NvimTree",
         text = function()
           return vim.fn.getcwd()
