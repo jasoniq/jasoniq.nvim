@@ -77,9 +77,9 @@ return {
           },
         },
       },
-      filters = {
-        custom = { ".DS_Store" },
-      },
+      -- filters = {
+      --   custom = { ".DS_Store" },
+      -- },
       git = {
         ignore = false,
       },
